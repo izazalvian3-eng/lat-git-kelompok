@@ -4,15 +4,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Website Kelompok</title>
+
+    <style>
+        /* ==============================
+           GLOBAL
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #1e293b;
+            background: #ffffff;
+        }
+
+
+        /* ==============================
+           NAVBAR
+        ============================== */
+
+        nav {
+            padding: 20px 8%;
+            background-color: #1e3a8a;
+            color: white;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            font-size: 24px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #bfdbfe;
+        }
+
+
+        /* ==============================
+           HOMEPAGE
+        ============================== */
+
+        .home {
+            min-height: 550px;
+            padding: 80px 8%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            background: linear-gradient(
+                135deg,
+                #eff6ff,
+                #ffffff
+            );
+        }
+
+        .home-content {
+            max-width: 750px;
+        }
+
+
+        /* ==============================
+           LABEL
+        ============================== */
+
+        .label {
+            display: inline-block;
+
+            padding: 8px 16px;
+            margin-bottom: 20px;
+
+            background: #dbeafe;
+            color: #2563eb;
+
+            border-radius: 20px;
+
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+
+        /* ==============================
+           JUDUL
+        ============================== */
+
+        .home h1 {
+            margin-bottom: 20px;
+
+            color: #1e3a8a;
+
+            font-size: 48px;
+            line-height: 1.2;
+        }
+
+
+        /* ==============================
+           DESKRIPSI
+        ============================== */
+
+        .home p {
+            margin-bottom: 30px;
+
+            color: #64748b;
+
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+
+        /* ==============================
+           BUTTON
+        ============================== */
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            background: #2563eb;
+            color: white;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+        }
+
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 18px 20px;
+
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .home {
+                min-height: 500px;
+                padding: 60px 20px;
+            }
+
+            .home h1 {
+                font-size: 35px;
+            }
+
+            .home p {
+                font-size: 15px;
+            }
+        }
+    </style>
 </head>
+
 
 <body>
 
+    <!-- ==============================
+         NAVBAR
+         TUGAS IZAZ
+    ============================== -->
+
     <nav>
+
         <h2>Website Kelompok</h2>
 
         <ul>
+
             <li>
                 <a href="index.html">Home</a>
             </li>
@@ -24,22 +224,45 @@
             <li>
                 <a href="kontak.html">Kontak</a>
             </li>
+
         </ul>
+
     </nav>
+
+
+    <!-- ==============================
+         HOMEPAGE
+         TUGAS IZAZ
+    ============================== -->
 
     <main>
 
-        <h1>Selamat Datang di Website Kelompok</h1>
+        <section class="home">
 
-        <p>
-            Selamat datang di website kelompok kami.
-            Kami menyediakan berbagai produk pilihan
-            dengan kualitas terbaik dan harga terjangkau.
-        </p>
+            <div class="home-content">
 
-        <a href="produk.html">
-            Lihat Produk
-        </a>
+                <span class="label">
+                    WEBSITE KELOMPOK
+                </span>
+
+                <h1>
+                    Selamat Datang di Website Kami
+                </h1>
+
+                <p>
+                    Selamat datang di website kelompok kami.
+                    Kami menyediakan berbagai produk pilihan
+                    dengan kualitas terbaik dan harga yang terjangkau.
+                    Temukan produk yang sesuai dengan kebutuhan Anda.
+                </p>
+
+                <a href="produk.html" class="btn">
+                    Lihat Produk
+                </a>
+
+            </div>
+
+        </section>
 
     </main>
 
