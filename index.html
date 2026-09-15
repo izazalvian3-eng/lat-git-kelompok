@@ -18,10 +18,6 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: Arial, sans-serif;
             color: #1e293b;
@@ -37,31 +33,10 @@
             padding: 20px 40px;
             background-color: #1e3a8a;
             color: white;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         nav h2 {
             margin: 0;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        nav ul li a:hover {
-            color: #bfdbfe;
         }
 
 
@@ -282,232 +257,10 @@
 
 
         /* ==============================
-           CONTACT SECTION
-        ============================== */
-
-        .kontak {
-            padding: 70px 20px;
-            background: white;
-        }
-
-        .kontak-header {
-            max-width: 650px;
-            margin: 0 auto 40px;
-            text-align: center;
-        }
-
-        .kontak-label {
-            display: inline-block;
-            padding: 7px 14px;
-            margin-bottom: 12px;
-
-            background: #dbeafe;
-            color: #2563eb;
-
-            border-radius: 20px;
-
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .kontak-header h2 {
-            margin-bottom: 12px;
-
-            color: #1e3a8a;
-            font-size: 34px;
-        }
-
-        .kontak-header p {
-            color: #64748b;
-            line-height: 1.6;
-        }
-
-
-        /* ==============================
-           CONTACT CONTAINER
-        ============================== */
-
-        .kontak-container {
-            max-width: 1000px;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 30px;
-        }
-
-
-        /* ==============================
-           CONTACT INFO
-        ============================== */
-
-        .kontak-info {
-            padding: 30px;
-
-            background: #f8fafc;
-
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-        }
-
-        .kontak-info h3 {
-            margin-bottom: 15px;
-
-            color: #1e3a8a;
-            font-size: 22px;
-        }
-
-        .kontak-info p {
-            margin-bottom: 20px;
-
-            color: #64748b;
-            line-height: 1.6;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-
-            margin-bottom: 18px;
-        }
-
-        .info-icon {
-            width: 45px;
-            height: 45px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: #dbeafe;
-
-            border-radius: 10px;
-
-            font-size: 20px;
-        }
-
-        .info-item div:last-child {
-            color: #475569;
-            font-size: 14px;
-        }
-
-
-        /* ==============================
-           CONTACT FORM
-        ============================== */
-
-        .kontak-form {
-            padding: 30px;
-
-            background: white;
-
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-
-            margin-bottom: 7px;
-
-            color: #1e293b;
-
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-
-            padding: 12px 14px;
-
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-
-            outline: none;
-
-            transition: 0.2s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #2563eb;
-            box-shadow: 0 0 0 3px #dbeafe;
-        }
-
-        .form-group textarea {
-            min-height: 130px;
-            resize: vertical;
-        }
-
-        .btn-kontak {
-            width: 100%;
-
-            padding: 12px;
-
-            border: none;
-            border-radius: 8px;
-
-            background: #2563eb;
-            color: white;
-
-            font-size: 14px;
-            font-weight: bold;
-
-            cursor: pointer;
-
-            transition: 0.2s;
-        }
-
-        .btn-kontak:hover {
-            background: #1d4ed8;
-        }
-
-
-        /* ==============================
-           FOOTER
-        ============================== */
-
-        footer {
-            padding: 25px 20px;
-
-            background: #1e3a8a;
-            color: white;
-
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 14px;
-        }
-
-
-        /* ==============================
            RESPONSIVE
         ============================== */
 
         @media (max-width: 800px) {
-
-            nav {
-                padding: 20px;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav ul {
-                gap: 15px;
-            }
 
             .produk-container {
                 max-width: 400px;
@@ -515,13 +268,12 @@
                 grid-template-columns: 1fr;
             }
 
-            .produk-header h2,
-            .kontak-header h2 {
+            .produk-header h2 {
                 font-size: 28px;
             }
 
-            .kontak-container {
-                grid-template-columns: 1fr;
+            nav {
+                padding: 20px;
             }
         }
     </style>
@@ -536,16 +288,6 @@
 
     <nav>
         <h2>Website Kelompok</h2>
-
-        <ul>
-            <li>
-                <a href="#produk">Produk</a>
-            </li>
-
-            <li>
-                <a href="#kontak">Kontak</a>
-            </li>
-        </ul>
     </nav>
 
 
@@ -573,7 +315,10 @@
 
         <div class="produk-container">
 
-            <!-- PRODUK 1 -->
+
+            <!-- ==============================
+                 PRODUK 1
+            ============================== -->
 
             <div class="produk-card">
 
@@ -612,7 +357,9 @@
             </div>
 
 
-            <!-- PRODUK 2 -->
+            <!-- ==============================
+                 PRODUK 2
+            ============================== -->
 
             <div class="produk-card">
 
@@ -651,7 +398,9 @@
             </div>
 
 
-            <!-- PRODUK 3 -->
+            <!-- ==============================
+                 PRODUK 3
+            ============================== -->
 
             <div class="produk-card">
 
@@ -692,169 +441,6 @@
         </div>
 
     </section>
-
-
-    <!-- ==============================
-         CONTACT SECTION - SISWA C
-    ============================== -->
-
-    <section class="kontak" id="kontak">
-
-        <div class="kontak-header">
-
-            <span class="kontak-label">
-                HUBUNGI KAMI
-            </span>
-
-            <h2>Kontak Kami</h2>
-
-            <p>
-                Jika memiliki pertanyaan atau ingin mengetahui
-                informasi lebih lanjut, silakan hubungi kami.
-            </p>
-
-        </div>
-
-
-        <div class="kontak-container">
-
-
-            <!-- CONTACT INFO -->
-
-            <div class="kontak-info">
-
-                <h3>Informasi Kontak</h3>
-
-                <p>
-                    Kami siap membantu menjawab pertanyaan
-                    dan memberikan informasi yang Anda butuhkan.
-                </p>
-
-
-                <div class="info-item">
-
-                    <div class="info-icon">
-                        📧
-                    </div>
-
-                    <div>
-                        kelompok@email.com
-                    </div>
-
-                </div>
-
-
-                <div class="info-item">
-
-                    <div class="info-icon">
-                        📱
-                    </div>
-
-                    <div>
-                        0812-3456-7890
-                    </div>
-
-                </div>
-
-
-                <div class="info-item">
-
-                    <div class="info-icon">
-                        📍
-                    </div>
-
-                    <div>
-                        Indonesia
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- CONTACT FORM -->
-
-            <div class="kontak-form">
-
-                <form>
-
-                    <div class="form-group">
-
-                        <label for="nama">
-                            Nama
-                        </label>
-
-                        <input
-                            type="text"
-                            id="nama"
-                            name="nama"
-                            placeholder="Masukkan nama Anda"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="email">
-                            Email
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Masukkan email Anda"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="pesan">
-                            Pesan
-                        </label>
-
-                        <textarea
-                            id="pesan"
-                            name="pesan"
-                            placeholder="Tulis pesan Anda..."
-                            required
-                        ></textarea>
-
-                    </div>
-
-
-                    <button
-                        type="submit"
-                        class="btn-kontak"
-                    >
-                        Kirim Pesan
-                    </button>
-
-                </form>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==============================
-         FOOTER
-    ============================== -->
-
-    <footer>
-
-        <p>
-            © 2026 Website Kelompok. Semua Hak Dilindungi.
-        </p>
-
-    </footer>
 
 </body>
 
