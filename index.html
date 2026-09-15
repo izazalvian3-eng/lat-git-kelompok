@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AutoDrive - Koleksi Mobil</title>
+    <title>AutoDrive - Showroom Mobil</title>
 
     <style>
         * {
@@ -14,10 +14,14 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
             color: #1e293b;
-            background: #f8fafc;
+            background: #ffffff;
         }
 
         /* =========================
@@ -53,7 +57,6 @@
             color: white;
             text-decoration: none;
             font-size: 15px;
-
             transition: 0.3s;
         }
 
@@ -62,22 +65,40 @@
         }
 
         /* =========================
-           HEADER
+           HERO
         ========================= */
 
-        .header {
-            padding: 70px 8% 40px;
-            text-align: center;
+        .hero {
+            min-height: 600px;
+            padding: 80px 8%;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    rgba(17, 24, 39, 0.85),
+                    rgba(17, 24, 39, 0.85)
+                ),
+                url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            color: white;
         }
 
         .label {
             display: inline-block;
 
             padding: 8px 16px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
 
-            background: #fef3c7;
-            color: #b45309;
+            background: #f59e0b;
+            color: #111827;
 
             border-radius: 20px;
 
@@ -85,124 +106,36 @@
             font-weight: bold;
         }
 
-        .header h1 {
-            font-size: 40px;
-            color: #111827;
-            margin-bottom: 15px;
-        }
-
-        .header p {
-            max-width: 650px;
-
-            margin: auto;
-
-            color: #64748b;
-
-            line-height: 1.7;
-        }
-
-        /* =========================
-           PRODUCTS
-        ========================= */
-
-        .products {
-            padding: 30px 8% 80px;
-
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .card {
-            overflow: hidden;
-
-            background: white;
-
-            border-radius: 12px;
-
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-7px);
-        }
-
-        .car-image {
-            height: 210px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            background: #e5e7eb;
-
-            font-size: 100px;
-        }
-
-        .card-content {
-            padding: 25px;
-        }
-
-        .badge {
-            display: inline-block;
-
-            padding: 5px 10px;
-
-            margin-bottom: 12px;
-
-            background: #fef3c7;
-            color: #b45309;
-
-            border-radius: 5px;
-
-            font-size: 11px;
-            font-weight: bold;
-        }
-
-        .card h2 {
-            color: #111827;
-            margin-bottom: 10px;
-        }
-
-        .description {
-            color: #64748b;
-
-            font-size: 14px;
-            line-height: 1.6;
-
-            margin-bottom: 18px;
-        }
-
-        .price {
-            color: #f59e0b;
-
-            font-size: 21px;
-            font-weight: bold;
-
-            margin-bottom: 15px;
-        }
-
-        .rating {
-            color: #64748b;
-
-            font-size: 13px;
-
+        .hero h1 {
+            font-size: 52px;
+            line-height: 1.15;
             margin-bottom: 20px;
         }
 
+        .hero h1 span {
+            color: #f59e0b;
+        }
+
+        .hero p {
+            max-width: 600px;
+
+            margin-bottom: 30px;
+
+            color: #d1d5db;
+
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
         .btn {
-            display: block;
+            display: inline-block;
 
-            padding: 12px;
+            padding: 14px 28px;
 
-            background: #111827;
-            color: white;
+            background: #f59e0b;
+            color: #111827;
 
-            border-radius: 7px;
-
-            text-align: center;
+            border-radius: 8px;
 
             text-decoration: none;
 
@@ -213,20 +146,55 @@
         }
 
         .btn:hover {
-            background: #f59e0b;
+            background: #fbbf24;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           INFO
+        ========================= */
+
+        .info {
+            padding: 60px 8%;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+
+            background: #f8fafc;
+        }
+
+        .info-card {
+            padding: 30px;
+
+            text-align: center;
+
+            background: white;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-card .icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .info-card h3 {
+            margin-bottom: 10px;
             color: #111827;
+        }
+
+        .info-card p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
         /* =========================
            RESPONSIVE
         ========================= */
-
-        @media (max-width: 900px) {
-
-            .products {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
 
         @media (max-width: 700px) {
 
@@ -241,17 +209,22 @@
                 gap: 15px;
             }
 
-            .header {
-                padding: 50px 20px 30px;
+            .hero {
+                min-height: 550px;
+                padding: 60px 20px;
             }
 
-            .header h1 {
-                font-size: 32px;
+            .hero h1 {
+                font-size: 38px;
             }
 
-            .products {
+            .hero p {
+                font-size: 15px;
+            }
+
+            .info {
                 grid-template-columns: 1fr;
-                padding: 20px;
+                padding: 40px 20px;
             }
         }
     </style>
@@ -266,7 +239,6 @@
         <h2>Auto<span>Drive</span></h2>
 
         <ul>
-
             <li>
                 <a href="index.html">Home</a>
             </li>
@@ -278,278 +250,97 @@
             <li>
                 <a href="kontak.html">Kontak</a>
             </li>
-
         </ul>
 
     </nav>
 
 
-    <!-- HEADER -->
+    <!-- HOMEPAGE -->
 
-    <section class="header">
+    <main>
 
-        <span class="label">
-            KOLEKSI MOBIL
-        </span>
+        <section class="hero">
 
-        <h1>
-            Pilihan Mobil Terbaik
-        </h1>
+            <div class="hero-content">
 
-        <p>
-            Jelajahi berbagai pilihan mobil yang tersedia
-            di AutoDrive. Pilih kendaraan yang sesuai
-            dengan kebutuhan dan gaya perjalanan Anda.
-        </p>
-
-    </section>
-
-
-    <!-- PRODUCTS -->
-
-    <section class="products">
-
-
-        <!-- MOBIL 1 -->
-
-        <div class="card">
-
-            <div class="car-image">
-                🚙
-            </div>
-
-            <div class="card-content">
-
-                <span class="badge">
-                    SUV
+                <span class="label">
+                    SHOWROOM MOBIL
                 </span>
 
-                <h2>
-                    Toyota Fortuner
-                </h2>
+                <h1>
+                    Temukan Mobil <span>Impianmu</span>
+                </h1>
 
-                <p class="description">
-                    SUV tangguh dengan desain modern
-                    dan nyaman untuk perjalanan keluarga.
+                <p>
+                    Selamat datang di AutoDrive.
+                    Kami menyediakan berbagai pilihan mobil
+                    berkualitas dengan desain modern,
+                    performa terbaik, dan harga yang menarik.
                 </p>
 
-                <div class="price">
-                    Rp 580.000.000
-                </div>
-
-                <div class="rating">
-                    ⭐ 4.9/5
-                </div>
-
-                <a href="kontak.html" class="btn">
-                    Tanya Sekarang
+                <a href="produk.html" class="btn">
+                    Lihat Koleksi Mobil
                 </a>
 
             </div>
 
-        </div>
+        </section>
 
 
-        <!-- MOBIL 2 -->
+        <!-- INFORMASI -->
 
-        <div class="card">
+        <section class="info">
 
-            <div class="car-image">
-                🚘
-            </div>
+            <div class="info-card">
 
-            <div class="card-content">
+                <div class="icon">🚗</div>
 
-                <span class="badge">
-                    SEDAN
-                </span>
+                <h3>
+                    Mobil Berkualitas
+                </h3>
 
-                <h2>
-                    Honda Civic
-                </h2>
-
-                <p class="description">
-                    Sedan sporty dengan tampilan elegan
-                    dan performa yang responsif.
+                <p>
+                    Pilihan mobil berkualitas untuk
+                    menemani perjalanan Anda.
                 </p>
 
-                <div class="price">
-                    Rp 610.000.000
-                </div>
-
-                <div class="rating">
-                    ⭐ 4.8/5
-                </div>
-
-                <a href="kontak.html" class="btn">
-                    Tanya Sekarang
-                </a>
-
             </div>
 
-        </div>
 
+            <div class="info-card">
 
-        <!-- MOBIL 3 -->
+                <div class="icon">💰</div>
 
-        <div class="card">
+                <h3>
+                    Harga Terjangkau
+                </h3>
 
-            <div class="car-image">
-                🚗
-            </div>
-
-            <div class="card-content">
-
-                <span class="badge">
-                    SUV
-                </span>
-
-                <h2>
-                    Honda HR-V
-                </h2>
-
-                <p class="description">
-                    SUV compact dengan desain stylish
-                    dan cocok untuk aktivitas sehari-hari.
+                <p>
+                    Dapatkan mobil impian dengan
+                    pilihan harga yang kompetitif.
                 </p>
 
-                <div class="price">
-                    Rp 410.000.000
-                </div>
-
-                <div class="rating">
-                    ⭐ 4.7/5
-                </div>
-
-                <a href="kontak.html" class="btn">
-                    Tanya Sekarang
-                </a>
-
             </div>
 
-        </div>
 
+            <div class="info-card">
 
-        <!-- MOBIL 4 -->
+                <div class="icon">⭐</div>
 
-        <div class="card">
+                <h3>
+                    Pelayanan Terbaik
+                </h3>
 
-            <div class="car-image">
-                🚙
-            </div>
-
-            <div class="card-content">
-
-                <span class="badge">
-                    MPV
-                </span>
-
-                <h2>
-                    Toyota Innova
-                </h2>
-
-                <p class="description">
-                    Mobil keluarga dengan kabin luas
-                    dan nyaman digunakan untuk perjalanan jauh.
+                <p>
+                    Kami memberikan pelayanan terbaik
+                    untuk setiap pelanggan.
                 </p>
 
-                <div class="price">
-                    Rp 430.000.000
-                </div>
-
-                <div class="rating">
-                    ⭐ 4.8/5
-                </div>
-
-                <a href="kontak.html" class="btn">
-                    Tanya Sekarang
-                </a>
-
             </div>
 
-        </div>
+        </section>
 
-
-        <!-- MOBIL 5 -->
-
-        <div class="card">
-
-            <div class="car-image">
-                🚘
-            </div>
-
-            <div class="card-content">
-
-                <span class="badge">
-                    SUV
-                </span>
-
-                <h2>
-                    Mitsubishi Pajero
-                </h2>
-
-                <p class="description">
-                    SUV premium dengan performa kuat
-                    untuk berbagai kondisi perjalanan.
-                </p>
-
-                <div class="price">
-                    Rp 590.000.000
-                </div>
-
-                <div class="rating">
-                    ⭐ 4.9/5
-                </div>
-
-                <a href="kontak.html" class="btn">
-                    Tanya Sekarang
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- MOBIL 6 -->
-
-        <div class="card">
-
-            <div class="car-image">
-                🚗
-            </div>
-
-            <div class="card-content">
-
-                <span class="badge">
-                    PREMIUM
-                </span>
-
-                <h2>
-                    BMW Series 3
-                </h2>
-
-                <p class="description">
-                    Sedan premium dengan desain elegan
-                    serta teknologi dan performa modern.
-                </p>
-
-                <div class="price">
-                    Rp 900.000.000
-                </div>
-
-                <div class="rating">
-                    ⭐ 4.9/5
-                </div>
-
-                <a href="kontak.html" class="btn">
-                    Tanya Sekarang
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
+    </main>
 
 </body>
 
