@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Website Kelompok</title>
+    <title>AutoDrive - Koleksi Mobil</title>
 
     <style>
-        /* ==============================
-           GLOBAL
-        ============================== */
-
         * {
             margin: 0;
             padding: 0;
@@ -20,212 +17,240 @@
         body {
             font-family: Arial, sans-serif;
             color: #1e293b;
-            background: #ffffff;
+            background: #f8fafc;
         }
 
-        /* ==============================
+        /* =========================
            NAVBAR
-        ============================== */
+        ========================= */
 
         nav {
-            padding: 20px 40px;
-            background-color: #1e3a8a;
+            padding: 20px 8%;
+            background: #111827;
             color: white;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         nav h2 {
-            margin: 0;
+            font-size: 24px;
+            letter-spacing: 1px;
         }
 
-        /* ==============================
-           PRODUCTS SECTION
-        ============================== */
+        nav h2 span {
+            color: #f59e0b;
+        }
 
-        .produk {
-            padding: 70px 20px;
-            background: #f8fafc;
+        nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f59e0b;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            padding: 70px 8% 40px;
             text-align: center;
         }
 
-        .produk-header {
-            max-width: 650px;
-            margin: 0 auto 40px;
-        }
-
-        .produk-label {
+        .label {
             display: inline-block;
-            padding: 7px 14px;
-            margin-bottom: 12px;
-            background: #dbeafe;
-            color: #2563eb;
+
+            padding: 8px 16px;
+            margin-bottom: 15px;
+
+            background: #fef3c7;
+            color: #b45309;
+
             border-radius: 20px;
+
             font-size: 13px;
             font-weight: bold;
         }
 
-        .produk-header h2 {
-            margin-bottom: 12px;
-            color: #1e3a8a;
-            font-size: 34px;
+        .header h1 {
+            font-size: 40px;
+            color: #111827;
+            margin-bottom: 15px;
         }
 
-        .produk-header p {
-            color: #64748b;
-            line-height: 1.6;
-        }
+        .header p {
+            max-width: 650px;
 
-        /* ==============================
-           PRODUCT CONTAINER
-        ============================== */
-
-        .produk-container {
-            max-width: 1100px;
             margin: auto;
+
+            color: #64748b;
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .products {
+            padding: 30px 8% 80px;
+
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
-        /* ==============================
-           PRODUCT CARD
-        ============================== */
+        .card {
+            overflow: hidden;
 
-        .produk-card {
-            position: relative;
-            padding: 25px;
             background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            text-align: left;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-            transition: 0.3s ease;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
         }
 
-        .produk-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        .card:hover {
+            transform: translateY(-7px);
         }
 
-        /* ==============================
-           PRODUCT ICON
-        ============================== */
+        .car-image {
+            height: 210px;
 
-        .produk-icon {
-            width: 65px;
-            height: 65px;
-            margin-bottom: 20px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            background: #eff6ff;
-            border-radius: 14px;
-            font-size: 30px;
+            align-items: center;
+
+            background: #e5e7eb;
+
+            font-size: 100px;
         }
 
-        /* ==============================
-           PRODUCT BADGE
-        ============================== */
+        .card-content {
+            padding: 25px;
+        }
 
-        .produk-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+        .badge {
+            display: inline-block;
+
             padding: 5px 10px;
-            background: #2563eb;
-            color: white;
-            border-radius: 20px;
+
+            margin-bottom: 12px;
+
+            background: #fef3c7;
+            color: #b45309;
+
+            border-radius: 5px;
+
             font-size: 11px;
             font-weight: bold;
         }
 
-        /* ==============================
-           PRODUCT TEXT
-        ============================== */
-
-        .produk-card h3 {
-            color: #1e293b;
-            font-size: 21px;
+        .card h2 {
+            color: #111827;
             margin-bottom: 10px;
         }
 
-        .produk-card .deskripsi {
+        .description {
             color: #64748b;
+
             font-size: 14px;
             line-height: 1.6;
-            min-height: 65px;
+
+            margin-bottom: 18px;
         }
 
-        /* ==============================
-           PRODUCT RATING
-        ============================== */
-
-        .produk-rating {
-            margin: 15px 0;
-            font-size: 14px;
-        }
-
-        .produk-rating span {
+        .price {
             color: #f59e0b;
+
+            font-size: 21px;
+            font-weight: bold;
+
+            margin-bottom: 15px;
         }
 
-        .produk-rating small {
+        .rating {
             color: #64748b;
-        }
 
-        /* ==============================
-           PRODUCT BOTTOM
-        ============================== */
-
-        .produk-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .produk-harga {
-            color: #2563eb;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        /* ==============================
-           BUTTON
-        ============================== */
-
-        .btn-produk {
-            display: inline-block;
-            padding: 10px 15px;
-            background: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
             font-size: 13px;
+
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: block;
+
+            padding: 12px;
+
+            background: #111827;
+            color: white;
+
+            border-radius: 7px;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            font-size: 14px;
             font-weight: bold;
-            transition: 0.2s;
+
+            transition: 0.3s;
         }
 
-        .btn-produk:hover {
-            background: #1d4ed8;
+        .btn:hover {
+            background: #f59e0b;
+            color: #111827;
         }
 
-        /* ==============================
+        /* =========================
            RESPONSIVE
-        ============================== */
+        ========================= */
 
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
 
-            .produk-container {
-                grid-template-columns: 1fr;
-                max-width: 400px;
+            .products {
+                grid-template-columns: repeat(2, 1fr);
             }
+        }
 
-            .produk-header h2 {
-                font-size: 28px;
-            }
+        @media (max-width: 700px) {
 
             nav {
+                padding: 18px 20px;
+
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .header {
+                padding: 50px 20px 30px;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
                 padding: 20px;
             }
         }
@@ -234,154 +259,291 @@
 
 <body>
 
-    <!-- ==============================
-         NAVBAR
-    ============================== -->
+    <!-- NAVBAR -->
 
     <nav>
-        <h2>Website Kelompok</h2>
+
+        <h2>Auto<span>Drive</span></h2>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="produk.html">Mobil</a>
+            </li>
+
+            <li>
+                <a href="kontak.html">Kontak</a>
+            </li>
+
+        </ul>
+
     </nav>
 
-    <!-- ==============================
-         PRODUCTS SECTION
-    ============================== -->
 
-    <section class="produk" id="produk">
+    <!-- HEADER -->
 
-        <div class="produk-header">
+    <section class="header">
 
-            <span class="produk-label">
-                PRODUK UNGGULAN
-            </span>
+        <span class="label">
+            KOLEKSI MOBIL
+        </span>
 
-            <h2>Produk Kami</h2>
+        <h1>
+            Pilihan Mobil Terbaik
+        </h1>
 
-            <p>
-                Temukan berbagai produk pilihan dengan
-                kualitas terbaik dan harga yang terjangkau.
-            </p>
+        <p>
+            Jelajahi berbagai pilihan mobil yang tersedia
+            di AutoDrive. Pilih kendaraan yang sesuai
+            dengan kebutuhan dan gaya perjalanan Anda.
+        </p>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+
+    <section class="products">
+
+
+        <!-- MOBIL 1 -->
+
+        <div class="card">
+
+            <div class="car-image">
+                🚙
+            </div>
+
+            <div class="card-content">
+
+                <span class="badge">
+                    SUV
+                </span>
+
+                <h2>
+                    Toyota Fortuner
+                </h2>
+
+                <p class="description">
+                    SUV tangguh dengan desain modern
+                    dan nyaman untuk perjalanan keluarga.
+                </p>
+
+                <div class="price">
+                    Rp 580.000.000
+                </div>
+
+                <div class="rating">
+                    ⭐ 4.9/5
+                </div>
+
+                <a href="kontak.html" class="btn">
+                    Tanya Sekarang
+                </a>
+
+            </div>
 
         </div>
 
-        <div class="produk-container">
 
-            <!-- ==============================
-                 PRODUK 1
-            ============================== -->
+        <!-- MOBIL 2 -->
 
-            <div class="produk-card">
+        <div class="card">
 
-                <span class="produk-badge">
-                    POPULER
+            <div class="car-image">
+                🚘
+            </div>
+
+            <div class="card-content">
+
+                <span class="badge">
+                    SEDAN
                 </span>
 
-                <div class="produk-icon">
-                    🎧
-                </div>
+                <h2>
+                    Honda Civic
+                </h2>
 
-                <h3>Headphone</h3>
-
-                <p class="deskripsi">
-                    Headphone nyaman dengan kualitas suara
-                    jernih untuk belajar maupun hiburan.
+                <p class="description">
+                    Sedan sporty dengan tampilan elegan
+                    dan performa yang responsif.
                 </p>
 
-                <div class="produk-rating">
-                    <span>★★★★★</span>
-                    <small>4.9/5</small>
+                <div class="price">
+                    Rp 610.000.000
                 </div>
 
-                <div class="produk-bottom">
-
-                    <div class="produk-harga">
-                        Rp150.000
-                    </div>
-
-                    <a href="#" class="btn-produk">
-                        Lihat Produk
-                    </a>
-
+                <div class="rating">
+                    ⭐ 4.8/5
                 </div>
+
+                <a href="kontak.html" class="btn">
+                    Tanya Sekarang
+                </a>
 
             </div>
 
-            <!-- ==============================
-                 PRODUK 2
-            ============================== -->
+        </div>
 
-            <div class="produk-card">
 
-                <span class="produk-badge">
-                    TERBARU
+        <!-- MOBIL 3 -->
+
+        <div class="card">
+
+            <div class="car-image">
+                🚗
+            </div>
+
+            <div class="card-content">
+
+                <span class="badge">
+                    SUV
                 </span>
 
-                <div class="produk-icon">
-                    🎒
-                </div>
+                <h2>
+                    Honda HR-V
+                </h2>
 
-                <h3>Tas Sekolah</h3>
-
-                <p class="deskripsi">
-                    Tas sekolah dengan desain modern,
-                    nyaman digunakan dan memiliki banyak ruang.
+                <p class="description">
+                    SUV compact dengan desain stylish
+                    dan cocok untuk aktivitas sehari-hari.
                 </p>
 
-                <div class="produk-rating">
-                    <span>★★★★★</span>
-                    <small>4.8/5</small>
+                <div class="price">
+                    Rp 410.000.000
                 </div>
 
-                <div class="produk-bottom">
-
-                    <div class="produk-harga">
-                        Rp120.000
-                    </div>
-
-                    <a href="#" class="btn-produk">
-                        Lihat Produk
-                    </a>
-
+                <div class="rating">
+                    ⭐ 4.7/5
                 </div>
+
+                <a href="kontak.html" class="btn">
+                    Tanya Sekarang
+                </a>
 
             </div>
 
-            <!-- ==============================
-                 PRODUK 3
-            ============================== -->
+        </div>
 
-            <div class="produk-card">
 
-                <span class="produk-badge">
-                    FAVORIT
+        <!-- MOBIL 4 -->
+
+        <div class="card">
+
+            <div class="car-image">
+                🚙
+            </div>
+
+            <div class="card-content">
+
+                <span class="badge">
+                    MPV
                 </span>
 
-                <div class="produk-icon">
-                    ⌚
-                </div>
+                <h2>
+                    Toyota Innova
+                </h2>
 
-                <h3>Smart Watch</h3>
-
-                <p class="deskripsi">
-                    Jam pintar dengan desain sederhana
-                    dan berbagai fitur untuk aktivitas sehari-hari.
+                <p class="description">
+                    Mobil keluarga dengan kabin luas
+                    dan nyaman digunakan untuk perjalanan jauh.
                 </p>
 
-                <div class="produk-rating">
-                    <span>★★★★★</span>
-                    <small>4.7/5</small>
+                <div class="price">
+                    Rp 430.000.000
                 </div>
 
-                <div class="produk-bottom">
-
-                    <div class="produk-harga">
-                        Rp250.000
-                    </div>
-
-                    <a href="#" class="btn-produk">
-                        Lihat Produk
-                    </a>
-
+                <div class="rating">
+                    ⭐ 4.8/5
                 </div>
+
+                <a href="kontak.html" class="btn">
+                    Tanya Sekarang
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MOBIL 5 -->
+
+        <div class="card">
+
+            <div class="car-image">
+                🚘
+            </div>
+
+            <div class="card-content">
+
+                <span class="badge">
+                    SUV
+                </span>
+
+                <h2>
+                    Mitsubishi Pajero
+                </h2>
+
+                <p class="description">
+                    SUV premium dengan performa kuat
+                    untuk berbagai kondisi perjalanan.
+                </p>
+
+                <div class="price">
+                    Rp 590.000.000
+                </div>
+
+                <div class="rating">
+                    ⭐ 4.9/5
+                </div>
+
+                <a href="kontak.html" class="btn">
+                    Tanya Sekarang
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MOBIL 6 -->
+
+        <div class="card">
+
+            <div class="car-image">
+                🚗
+            </div>
+
+            <div class="card-content">
+
+                <span class="badge">
+                    PREMIUM
+                </span>
+
+                <h2>
+                    BMW Series 3
+                </h2>
+
+                <p class="description">
+                    Sedan premium dengan desain elegan
+                    serta teknologi dan performa modern.
+                </p>
+
+                <div class="price">
+                    Rp 900.000.000
+                </div>
+
+                <div class="rating">
+                    ⭐ 4.9/5
+                </div>
+
+                <a href="kontak.html" class="btn">
+                    Tanya Sekarang
+                </a>
 
             </div>
 
@@ -390,4 +552,5 @@
     </section>
 
 </body>
+
 </html>
